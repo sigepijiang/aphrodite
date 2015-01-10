@@ -7,3 +7,6 @@ app = Avalon(__name__)
 
 from .views import bp_aphrodite
 app.register_blueprint(bp_aphrodite)
+
+from .apis import bp_apis
+app.register_blueprint(bp_apis)

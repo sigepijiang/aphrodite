@@ -14,12 +14,12 @@
         <script type="text/javascript" src="{{ static_file('js/lib/bootstrap.js') }}"></script>
         <script type="text/javascript" src="{{ static_file('js/avalon.js') }}"></script>
         <script type="text/javascript" src="{{ static_file('js/lib/less.js') }}"></script>
+        <script type="text/javascript" src="{{ static_file('js/lib/ajaxupload.js') }}"></script>
+        <script type="text/javascript" src="{{ static_file('js/aphrodite/image.js') }}"></script>
         {% endblock %}
     </head>
     <body>
-        <form method="POST" enctype="multipart/form-data">
             <input type="file" name="image">
             <input type="submit" name="upload" value="上传">
-        </form>
     </body>
 </html>

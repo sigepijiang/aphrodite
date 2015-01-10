@@ -5,6 +5,7 @@ from datetime import datetime
 import sqlalchemy as sa
 
 from share.framework.bottle.engines import db
+from share.framework.bottle import cached_property
 
 
 __all__ = ['ImageModel']
@@ -21,3 +22,17 @@ class ImageModel(db.Model, db.TableOpt):
         sa.DateTime(), default=datetime.now,
         server_default=sa.func.NOW(),
     )
+
+    @cached_property
+    def url(self):
+        return 'http://wishstone.qiniudn.com/%s.%s' % (
+            self.hashkey, self.suffix)
+
+    def as_dict(self):
+        return {
+            'hashkey': self.hashkey,
+            'suffix': self.suffix,
+            'width': self.width,
+            'height': self.height,
+            'url': self.url,
+        }
