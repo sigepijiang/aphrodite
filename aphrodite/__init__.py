@@ -4,3 +4,6 @@ from share.framework.bottle import Avalon
 
 # push the app into the stack FIRST!
 app = Avalon(__name__)
+
+from .views import bp_aphrodite
+app.register_blueprint(bp_aphrodite)

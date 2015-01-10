@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv='Content-Type' content='text/html; charset=utf8'/>
+        <title>图片上传</title>
+
+        {% block style %}
+        <link href="{{ static_file('css/lib/bootstrap.css') }}" rel="stylesheet" type="text/css"/>
+        <link href="{{ static_file('css/gui.css') }}" rel="stylesheet" type="text/css"/>
+        {% endblock %}
+
+        {% block script %}
+        <script type="text/javascript" src="{{ static_file('js/lib/jquery.js') }}"></script>
+        <script type="text/javascript" src="{{ static_file('js/lib/bootstrap.js') }}"></script>
+        <script type="text/javascript" src="{{ static_file('js/avalon.js') }}"></script>
+        <script type="text/javascript" src="{{ static_file('js/lib/less.js') }}"></script>
+        {% endblock %}
+    </head>
+    <body>
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="image">
+            <input type="submit" name="upload" value="上传">
+        </form>
+    </body>
+</html>
