@@ -45,7 +45,8 @@ class ImageAPI(RESTfulOpenAPI):
                     'format': '$(imageInfo.format)',
                     'width': '$(imageInfo.width)',
                     'height': '$(imageInfo.height)',
-                })
+                }),
+                'save_key': '$(etag)',
             }
         )
         ret, info = put_data(token, key, data)
