@@ -29,7 +29,7 @@ class ImageAPI(RESTfulOpenAPI):
 
         data = image.file.read()
         data_hash = md5(data).hexdigest()
-        key = data_hash + '.' + suffix
+        key = data_hash
 
         model = ImageModel.query.get(data_hash)
         if model:
@@ -51,7 +51,7 @@ class ImageAPI(RESTfulOpenAPI):
         )
         ret, info = put_data(token, key, data)
         model = ImageModel(
-            hashkey=data_hash, suffix=suffix,
+            hashkey=data_hash, suffix=ret['format'],
             width=ret['width'], height=ret['height'])
         db.session.add(model)
         db.session.commit()

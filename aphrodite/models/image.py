@@ -25,8 +25,8 @@ class ImageModel(db.Model, db.TableOpt):
 
     @cached_property
     def url(self):
-        return 'http://wishstone.qiniudn.com/%s.%s' % (
-            self.hashkey, self.suffix)
+        return 'http://wishstone.qiniudn.com/%s' % (
+            self.hashkey)
 
     def as_dict(self):
         return {
